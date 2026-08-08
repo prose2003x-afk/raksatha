@@ -877,11 +877,11 @@ Life full-ah un koodave unna thaangi pidichu vazhanum nu aasa padrann. Love you 
     if (inputScratchMsg) inputScratchMsg.value = userConfig.scratchMessage;
 
     if (previewHero) previewHero.src = userConfig.heroImage;
-    if (previewSurprise) previewSurprise.src = userConfig.surpriseImage || 'assets/surprise.jpg';
-    if (previewSpotlight) previewSpotlight.src = userConfig.spotlightImage || 'assets/cozy.jpg';
+    if (previewSurprise) previewSurprise.src = userConfig.surpriseImage || 'Scratch_Secret_photo.jpeg';
+    if (previewSpotlight) previewSpotlight.src = userConfig.spotlightImage || 'Spotlight.jpeg';
     if (previewPhoto1) previewPhoto1.src = userConfig.photo1;
     if (previewPhoto2) previewPhoto2.src = userConfig.photo2;
-    if (previewPhoto3) previewPhoto3.src = userConfig.photo3 || 'assets/cozy.jpg';
+    if (previewPhoto3) previewPhoto3.src = userConfig.photo3 || 'Polaroid_3.jpeg';
 
     customizerModal.classList.add('is-active');
   }
@@ -926,20 +926,20 @@ Life full-ah un koodave unna thaangi pidichu vazhanum nu aasa padrann. Love you 
     if (heroCoupleImg) heroCoupleImg.src = userConfig.heroImage;
 
     const scratchSurpriseImg = document.getElementById('scratch-surprise-photo');
-    if (scratchSurpriseImg) scratchSurpriseImg.src = userConfig.surpriseImage || 'assets/surprise.jpg';
+    if (scratchSurpriseImg) scratchSurpriseImg.src = userConfig.surpriseImage || 'Scra.jpg';
 
     const modalSurpriseImg = document.getElementById('modal-surprise-img');
-    if (modalSurpriseImg) modalSurpriseImg.src = userConfig.surpriseImage || 'assets/surprise.jpg';
+    if (modalSurpriseImg) modalSurpriseImg.src = userConfig.surpriseImage || 'Scratch_Secret_photo.jpeg';
 
     const spotlightPhotoImg = document.getElementById('spotlight-photo-img');
-    if (spotlightPhotoImg) spotlightPhotoImg.src = userConfig.spotlightImage || 'assets/cozy.jpg';
+    if (spotlightPhotoImg) spotlightPhotoImg.src = userConfig.spotlightImage || 'Spotlight.jpeg',;
 
     const galleryImg1 = document.getElementById('gallery-img-1');
     if (galleryImg1) galleryImg1.src = userConfig.photo1;
     const galleryImg2 = document.getElementById('gallery-img-2');
     if (galleryImg2) galleryImg2.src = userConfig.photo2;
     const galleryImg3 = document.getElementById('gallery-img-3');
-    if (galleryImg3) galleryImg3.src = userConfig.photo3 || 'assets/cozy.jpg';
+    if (galleryImg3) galleryImg3.src = userConfig.photo3 || 'Polaroid_3.jpeg';
 
     // Update In-Envelope Love Letter
     const letterTextEl = document.getElementById('letter-content-text');
