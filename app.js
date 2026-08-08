@@ -10,7 +10,7 @@
   const DEFAULT_CONFIG = {
     partner1: 'Prose',
     partner2: 'Raksatha',
-    startDate: '2023-01-01T00:00:00',
+    startDate: '2024-05-01T00:00:00',
     heroImage: 'Hero_main_photo.jpeg',
     surpriseImage: 'Scratch_Secret_photo.jpeg',
     spotlightImage: 'Spotlight.jpeg',
@@ -32,7 +32,7 @@ Life full-ah un koodave unna thaangi pidichu vazhanum nu aasa padrann. Love you 
   // Load from localStorage or default
   let userConfig = { ...DEFAULT_CONFIG };
   try {
-    const saved = localStorage.getItem('prose_raksatha_love_config_v4');
+    const saved = localStorage.getItem('prose_raksatha_love_config_v5'); // <-- changed to v5
     if (saved) {
       userConfig = { ...DEFAULT_CONFIG, ...JSON.parse(saved) };
     }
@@ -979,7 +979,7 @@ Life full-ah un koodave unna thaangi pidichu vazhanum nu aasa padrann. Love you 
       if (inputScratchMsg) userConfig.scratchMessage = inputScratchMsg.value.trim();
 
       try {
-        localStorage.setItem('prose_raksatha_love_config_v4', JSON.stringify(userConfig));
+        localStorage.setItem('prose_raksatha_love_config_v5', JSON.stringify(userConfig));
       } catch (e) {
         console.warn('Could not save to localStorage:', e);
       }
@@ -995,7 +995,7 @@ Life full-ah un koodave unna thaangi pidichu vazhanum nu aasa padrann. Love you 
     resetDefaultsBtn.addEventListener('click', () => {
       userConfig = { ...DEFAULT_CONFIG };
       try {
-        localStorage.removeItem('prose_raksatha_love_config_v4');
+        localStorage.removeItem('prose_raksatha_love_config_v5');
       } catch (e) { }
       applyConfigToUI();
       openCustomizer();
