@@ -11,12 +11,12 @@
     partner1: 'Prose',
     partner2: 'Raksatha',
     startDate: '2023-01-01T00:00:00',
-    heroImage: 'assets/sunset.jpg',
-    surpriseImage: 'assets/surprise.jpg',
-    spotlightImage: 'assets/cozy.jpg',
-    photo1: 'assets/sunset.jpg',
-    photo2: 'assets/stargazing.jpg',
-    photo3: 'assets/cozy.jpg',
+    heroImage: 'Hero_main_photo.jpeg',
+    surpriseImage: 'Scratch_Secret_photo.jpeg',
+    spotlightImage: 'Spotlight.jpeg',
+    photo1: 'Polaroid_1.jpeg',
+    photo2: 'Polaroid_2.jpeg',
+    photo3: 'Polaroid_3.jpeg',
     letterContent: `Un kitta solla nariya vishayam manasula irukku thangamey... En life la nee vandhadhuku apram dhaan ellaame romba azhaga maariduchu.
 
 Unnoda anbu, unnoda chinna chinna sirippu, un kooda irukura andha nimmathi... idhu edhuvume enaku vera engaum kedaikaadhu. Un kooda pesura ovvoru nimishamum enaku romba special.
@@ -256,8 +256,8 @@ Life full-ah un koodave unna thaangi pidichu vazhanum nu aasa padrann. Love you 
       }
 
       skyCtx.save();
-      skyCtx.fillStyle = h.hue === 340 
-        ? `rgba(255, 60, 110, ${h.alpha})` 
+      skyCtx.fillStyle = h.hue === 340
+        ? `rgba(255, 60, 110, ${h.alpha})`
         : `rgba(246, 211, 101, ${h.alpha})`;
       skyCtx.shadowColor = 'rgba(255, 51, 102, 0.6)';
       skyCtx.shadowBlur = 10;
@@ -367,7 +367,7 @@ Life full-ah un koodave unna thaangi pidichu vazhanum nu aasa padrann. Love you 
 
   function openIntroGate() {
     if (!introGate || introGate.classList.contains('is-opened')) return;
-    
+
     playRomanticChime();
     const rect = introHeartBtn ? introHeartBtn.getBoundingClientRect() : { left: width / 2, top: height / 2 };
     triggerFireworksBurst(rect.left + 50, rect.top + 45, 90);
@@ -606,11 +606,11 @@ Life full-ah un koodave unna thaangi pidichu vazhanum nu aasa padrann. Love you 
     ctx.clearRect(0, 0, scratchCanvas.width, scratchCanvas.height);
     if (scratchFill) scratchFill.style.width = '100%';
     if (scratchPct) scratchPct.textContent = '100%';
-    
+
     playRomanticChime();
     const rect = scratchCanvas.getBoundingClientRect();
     triggerFireworksBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, 85);
-    
+
     // Automatically trigger romantic pop-up modal
     setTimeout(() => {
       openSurpriseModal();
@@ -996,7 +996,7 @@ Life full-ah un koodave unna thaangi pidichu vazhanum nu aasa padrann. Love you 
       userConfig = { ...DEFAULT_CONFIG };
       try {
         localStorage.removeItem('prose_raksatha_love_config_v4');
-      } catch (e) {}
+      } catch (e) { }
       applyConfigToUI();
       openCustomizer();
       playRomanticChime();
