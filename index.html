@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forever With You — Prose &amp; Raksatha ❤️</title>
+  <meta name="description" content="A romantic universe created with infinite love for Raksatha by Prose. Every heartbeat, memory, and promise dedicated to us." />
+  
+  <!-- Google Fonts: Elegant Cursive + Editorial Serif + Clean Modern Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="is-locked">
+  <!-- Sky Canvas for Stars, Heart Embers & Fireworks -->
+  <canvas id="sky-canvas"></canvas>
+
+  <!-- Interactive Sparkle Trail Canvas -->
+  <canvas id="cursor-canvas"></canvas>
+
+  <!-- Romantic Toast Notification Container -->
+  <div id="romantic-toast-container" class="toast-container"></div>
+
+  <!-- ================= SURPRISE INTRO GATE ================= -->
+  <div id="intro-gate" class="intro-gate">
+    <div class="intro-backdrop"></div>
+    <div class="intro-content">
+      <div class="intro-seal-badge">
+        <span class="sparkle-icon">✨</span>
+        <span class="intro-to-tag">Unakaga Oru Special Surprise Raksatha</span>
+        <span class="sparkle-icon">✨</span>
+      </div>
+      
+      <h1 class="intro-title">Indha Ulaga Full-ah Stars Irundhaalum...</h1>
+      <p class="intro-subtitle">En idhayam unna mattum thaan eppavume choose pannum. Touch pannu, namma ulagatha paaru! ❤️</p>
+      
+      <div class="intro-heart-container" id="intro-heart-btn" role="button" aria-label="Touch to enter our love story" tabindex="0">
+        <div class="heart-pulse-glow"></div>
+        <div class="heart-pulse-glow delay-1"></div>
+        <div class="heart-pulse-glow delay-2"></div>
+        <div class="intro-heart">
+          <svg viewBox="0 0 100 90" class="heart-svg">
+            <defs>
+              <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ff3366" />
+                <stop offset="50%" stop-color="#ff6b8b" />
+                <stop offset="100%" stop-color="#d81b60" />
+              </linearGradient>
+              <filter id="heartGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+            <path d="M 50,85 C 50,85 10,55 10,28 A 20,20 0 0,1 50,20 A 20,20 0 0,1 90,28 C 90,55 50,85 50,85 Z" fill="url(#heartGradient)" filter="url(#heartGlow)" />
+          </svg>
+          <div class="heart-inner-text">
+            <span>Touch My Heart</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="intro-hint">
+        <span class="pulse-dot"></span> Heart-ah touch panni namma love universe-ku vaa
+      </div>
+      <div class="intro-from">With all my love, Prose ❤️</div>
+    </div>
+  </div>
+
+  <!-- ================= TOP NAVIGATION & AUDIO BAR ================= -->
+  <header class="romantic-header" id="romantic-header">
+    <nav class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-heart">💖</span>
+        <span class="brand-text"><span class="name-prose">Prose</span> &amp; <span class="name-raksatha">Raksatha</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#story-section" class="nav-link">Namma Story</a></li>
+        <li><a href="#letter-section" class="nav-link">Love Letter</a></li>
+        <li><a href="#scratch-section" class="nav-link">Secret Surprise</a></li>
+        <li><a href="#spotlight-section" class="nav-link">Special Moment</a></li>
+        <li><a href="#gallery-section" class="nav-link">Memory Vault</a></li>
+        <li><a href="#promise-section" class="nav-link">The Promise</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Ambient Music Toggle Button -->
+        <button id="music-toggle-btn" class="music-pill-btn" aria-label="Toggle Romantic Music" title="Romantic Melody Player">
+          <div class="vinyl-record" id="vinyl-disc">
+            <span class="vinyl-center"></span>
+          </div>
+          <div class="music-wave-bars">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+            <span class="bar bar-4"></span>
+          </div>
+          <span class="music-btn-label" id="music-label">Romantic Melody</span>
+        </button>
+
+        <!-- Customizer / Settings Trigger -->
+        <button id="open-customizer-btn" class="customizer-btn" aria-label="Customize Names & Photos" title="Personalize Photos & Text">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 15a3 3 0 100-6 3 3 0 000 6z"/>
+            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
+          </svg>
+          <span>Personalize</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= MAIN CONTENT WRAPPER ================= -->
+  <main class="main-universe" id="main-content">
+    
+    <!-- Floating Romantic Quick Actions -->
+    <div class="floating-love-bubbles">
+      <button class="bubble-heart-blast-btn" id="send-love-burst-btn" title="Send a burst of hearts to Raksatha!">
+        <span class="bubble-emoji">💖</span>
+        <span class="bubble-tooltip">Send Love Burst</span>
+      </button>
+    </div>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero-section" id="hero">
+      <div class="hero-glow-orb hero-glow-1"></div>
+      <div class="hero-glow-orb hero-glow-2"></div>
+      
+      <div class="hero-container">
+        <div class="hero-text-content">
+          <div class="hero-badge">
+            <span class="badge-icon">👑</span>
+            <span class="badge-text">En Uyirana Raksatha-ku</span>
+            <span class="badge-icon">✨</span>
+          </div>
+
+          <h1 class="hero-main-title">
+            Dearest <span class="gradient-name hero-name-partner">Raksatha</span>,
+            <span class="hero-sub-title">Nee Thaan En Full Universe</span>
+          </h1>
+
+          <p class="hero-romantic-quote">
+            "Ethana jenmam eduthalum, indha ulagathula ethana kodi per irundhalum, en idhayam un kitta thaan vandhu sollum: <span class="quote-highlight">Enaku nee mattum thaan venum nu.</span>"
+          </p>
+
+          <!-- Live Love Counter -->
+          <div class="love-clock-card">
+            <div class="clock-header">
+              <span class="clock-icon">⏳</span>
+              <span class="clock-title">Namma Love Journey Time</span>
+              <span class="heart-pulse-small">💓</span>
+            </div>
+            
+            <div class="clock-grid">
+              <div class="clock-unit-box">
+                <span class="clock-num" id="clock-years">0</span>
+                <span class="clock-label">Years</span>
+              </div>
+              <div class="clock-divider">:</div>
+              <div class="clock-unit-box">
+                <span class="clock-num" id="clock-days">000</span>
+                <span class="clock-label">Days</span>
+              </div>
+              <div class="clock-divider">:</div>
+              <div class="clock-unit-box">
+                <span class="clock-num" id="clock-hours">00</span>
+                <span class="clock-label">Hours</span>
+              </div>
+              <div class="clock-divider">:</div>
+              <div class="clock-unit-box">
+                <span class="clock-num" id="clock-minutes">00</span>
+                <span class="clock-label">Minutes</span>
+              </div>
+              <div class="clock-divider">:</div>
+              <div class="clock-unit-box">
+                <span class="clock-num" id="clock-seconds">00</span>
+                <span class="clock-label">Seconds</span>
+              </div>
+            </div>
+
+            <p class="clock-footer-note">
+              <span class="sparkle-gold">✨</span> Namma serndhu irukura ovvoru second-um romba precious &amp; special.
+            </p>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#letter-section" class="btn btn-primary btn-glow">
+              <span class="btn-icon">💌</span>
+              <span>Open Love Letter</span>
+            </a>
+            <a href="#scratch-section" class="btn btn-glass">
+              <span class="btn-icon">🎁</span>
+              <span>Scratch Secret Photo</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero 3D Card / Couple Polaroid -->
+        <div class="hero-visual">
+          <div class="polaroid-hero-frame" id="hero-polaroid-card">
+            <div class="polaroid-pin">📍</div>
+            <div class="polaroid-tape polaroid-tape-tl"></div>
+            <div class="polaroid-photo-wrapper">
+              <img src="assets/sunset.jpg" alt="Prose & Raksatha Sunset Romance" id="hero-couple-img" class="polaroid-img" />
+              <div class="photo-overlay-sparkles"></div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="polaroid-handwritten" id="hero-caption-text">"Un kooda irukumbodhu matum dhaan manasuku romba nimmathi."</span>
+              <span class="polaroid-tag">Prose &amp; Raksatha Forever ❤️</span>
+            </div>
+            <div class="polaroid-float-tag tag-1">En Thangamey ☀️</div>
+            <div class="polaroid-float-tag tag-2">Pure Magic ✨</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-down-indicator">
+        <a href="#story-section" class="scroll-link">
+          <span class="scroll-text">Namma Journey Paaru</span>
+          <span class="scroll-arrow">↓</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= OUR LOVE STORY TIMELINE ================= -->
+    <section class="story-section section-padding" id="story-section">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-badge">✨ Chapter by Chapter ✨</div>
+          <h2 class="section-title">The Story of <span class="gradient-text">Us</span></h2>
+          <p class="section-desc">Namma serndhu vandha andha azhagana moments &amp; memories.</p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item timeline-left" data-scroll>
+            <div class="timeline-dot">
+              <span class="dot-heart">💫</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-card-badge">Chapter I</div>
+              <div class="timeline-date">The Beginning</div>
+              <h3 class="timeline-heading">Namma Modhala Pesina Andha Naal</h3>
+              <p class="timeline-text">
+                Oru chinna hello la start aagi, ipo en vazhkaiye aagiitta. Modhal vaati un kitta pesum podhe manasula oru sweet feeling vandhuchu, something magical start aagudhu nu.
+              </p>
+              <div class="timeline-quote">"Un sirippa ketta andha modhal naal laye flat aaiten."</div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item timeline-right" data-scroll>
+            <div class="timeline-dot">
+              <span class="dot-heart">🌙</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-card-badge">Chapter II</div>
+              <div class="timeline-date">Late Night Magic</div>
+              <h3 class="timeline-heading">Midnight Talks &amp; Unlimited Laughs</h3>
+              <p class="timeline-text">
+                Time poradhey theriyama late night 3 AM varaikum pesinadhu... Silly jokes, chinna chinna secrets, namma dreams ellathayum share pannikitom. Un kitta pesumbodhu matum ulagam full-ah silent aana maari irukum.
+              </p>
+              <div class="timeline-quote">"Un kooda pesina ovvoru midnight-um oru azhagana kavithai."</div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item timeline-left" data-scroll>
+            <div class="timeline-dot">
+              <span class="dot-heart">💖</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-card-badge">Chapter III</div>
+              <div class="timeline-date">The Realization</div>
+              <h3 class="timeline-heading">En Idhayam Sonna Moment</h3>
+              <p class="timeline-text">
+                Nee en kaila pidichu pakathula nikkum podhu kedaikura andha safe feeling... Andha second en manasu sollichu: <strong class="highlight-pink">En life full-ah Raksatha kooda thaan vazhanum nu.</strong>
+              </p>
+              <div class="timeline-quote">"En veedu nu oru idam illa... Nee enga irukiyo anga thaan en veedu."</div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 4 -->
+          <div class="timeline-item timeline-right" data-scroll>
+            <div class="timeline-dot">
+              <span class="dot-heart">♾️</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-card-badge">Chapter IV</div>
+              <div class="timeline-date">Today &amp; Forever</div>
+              <h3 class="timeline-heading">Every Tomorrow With You</h3>
+              <p class="timeline-text">
+                Life la enna nadandhalum, un kaila tight-ah pidichutu un koodave nadapen. Unna sirika vechu, un kanneera thodachu, unna eppavume ulagathula best-ah paathupan.
+              </p>
+              <div class="timeline-quote">"Namma love story-oda best chapters inime thaan start aagapothu."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INTERACTIVE WAX-SEALED LOVE LETTER ================= -->
+    <section class="letter-section section-padding" id="letter-section">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-badge">💌 Straight From My Heart 💌</div>
+          <h2 class="section-title">A Love Letter for <span class="gradient-text">Raksatha</span></h2>
+          <p class="section-desc">Wax seal-ah touch panni namma letter-ah open panni full-ah padinga thangamey.</p>
+        </div>
+
+        <div class="envelope-interactive-area">
+          <div class="envelope-wrapper" id="envelope-wrapper">
+            <!-- Envelope Body -->
+            <div class="envelope-back"></div>
+            
+            <!-- Love Letter Paper Inside with Clean Scrollable View -->
+            <div class="letter-sheet" id="letter-sheet">
+              <div class="letter-inner-border">
+                <div class="letter-header-deco">
+                  <span class="deco-rose">🌹</span>
+                  <span class="deco-date" id="letter-display-date">Forever &amp; Always</span>
+                  <span class="deco-rose">🌹</span>
+                </div>
+
+                <h3 class="letter-salutation">My Dearest Raksatha,</h3>
+
+                <div class="letter-body-text custom-scrollbar" id="letter-content-text">
+                  <p>
+                    Un kitta solla nariya vishayam manasula irukku thangamey... En life la nee vandhadhuku apram dhaan ellaame romba azhaga maariduchu.
+                  </p>
+                  <p>
+                    Unnoda anbu, unnoda chinna chinna sirippu, un kooda irukura andha nimmathi... idhu edhuvume enaku vera engaum kedaikaadhu. Un kooda pesura ovvoru nimishamum enaku romba special.
+                  </p>
+                  <p>
+                    En kastamaana nerathula en kooda nikurathula irundhu, enna purinjikuradhu varaikum nee thaan enaku ellame. Thank you for being my best friend, my soulmate, and my forever love.
+                  </p>
+                  <p class="letter-promise-line">
+                    Life full-ah un koodave unna thaangi pidichu vazhanum nu aasa padrann. Love you so much Raksatha! ❤️
+                  </p>
+                </div>
+
+                <div class="letter-signature">
+                  <span class="sig-forever">Yours eternally,</span>
+                  <span class="sig-name" id="letter-sig-name">Prose</span>
+                  <span class="sig-heart">✍️💖</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Envelope Flap & Wax Seal -->
+            <div class="envelope-flap" id="envelope-flap">
+              <div class="wax-seal" id="wax-seal-btn" role="button" aria-label="Break wax seal to open letter" tabindex="0">
+                <div class="wax-seal-inner">
+                  <span class="seal-initials">P &amp; R</span>
+                  <span class="seal-heart">💖</span>
+                </div>
+                <div class="wax-seal-tooltip">Click to Open 💌</div>
+              </div>
+            </div>
+            <div class="envelope-pocket"></div>
+          </div>
+
+          <div class="letter-controls-bar">
+            <button id="toggle-letter-expand-btn" class="btn btn-primary btn-glow">
+              <span id="letter-btn-icon">📜</span>
+              <span id="letter-btn-text">Open Full Letter Modal</span>
+            </button>
+            <button id="read-aloud-letter-btn" class="btn btn-glass btn-sm" title="Listen to soft romantic letter reading">
+              <span>🔊</span>
+              <span>Read Aloud</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INTERACTIVE SCRATCH-TO-REVEAL SURPRISE WITH HIDDEN PHOTO & POP-UP MODAL ================= -->
+    <section class="scratch-section section-padding" id="scratch-section">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-badge">✨ Interactive Secret Photo ✨</div>
+          <h2 class="section-title">Scratch To Reveal Your <span class="gradient-text">Secret Surprise</span></h2>
+          <p class="section-desc">Mouse or finger vechu mela irukura gold layer-ah theinga, ulla unakaga oru sweet photo &amp; surprise irukku!</p>
+        </div>
+
+        <div class="scratch-card-wrapper">
+          <div class="scratch-card-outer" id="scratch-card-box" role="button" title="Click or Scratch to Open Surprise Photo Modal">
+            <!-- Hidden Romantic Photo & Surprise Content Behind Scratch Layer -->
+            <div class="scratch-secret-content" id="scratch-secret-box">
+              <img src="assets/surprise.jpg" id="scratch-surprise-photo" alt="Raksatha Secret Surprise Photo" class="scratch-bg-photo" />
+              <div class="scratch-photo-overlay"></div>
+              
+              <div class="scratch-overlay-text">
+                <div class="secret-ribbon">👑 VIP LOVE VOUCHER FOR RAKSATHA 👑</div>
+                <h3 class="secret-title" id="secret-card-title">Lifetime Of Infinite Love &amp; Cuddles</h3>
+                <p class="secret-text" id="secret-card-msg">
+                  "Indha coupon vechu lifetime full-ah unlimited hugs, spontaneous late-night ice cream runs, forehead kisses, and Prose-oda unconditional true love redeem pannikalam! ❤️"
+                </p>
+                <div class="secret-perks">
+                  <span class="perk-pill">✨ 100% Unconditional Love</span>
+                  <span class="perk-pill">🌹 Lifetime Validity</span>
+                  <span class="perk-pill">🥰 Zero Expiry Date</span>
+                </div>
+                <div class="secret-stamp">CLICK TO OPEN SURPRISE MODAL ❤️</div>
+              </div>
+            </div>
+
+            <!-- Canvas Scratch-off Surface -->
+            <canvas id="scratch-canvas" class="scratch-canvas"></canvas>
+          </div>
+
+          <div class="scratch-status-bar">
+            <div class="scratch-progress-wrapper">
+              <span class="scratch-progress-label">Scratch Progress:</span>
+              <div class="scratch-progress-bar">
+                <div class="scratch-progress-fill" id="scratch-fill" style="width: 0%"></div>
+              </div>
+              <span class="scratch-progress-pct" id="scratch-pct">0%</span>
+            </div>
+            
+            <button id="auto-reveal-scratch-btn" class="btn btn-primary btn-glow btn-sm">
+              <span>🪄</span>
+              <span>Reveal Secret Photo In Modal</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEPARATE SPECIAL PHOTO SPOTLIGHT SECTION ================= -->
+    <section class="spotlight-section section-padding" id="spotlight-section">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-badge">✨ Special Magical Moment ✨</div>
+          <h2 class="section-title">Our Sweetest <span class="gradient-text">Spotlight</span></h2>
+          <p class="section-desc">En idhayathuku romba close-aana innoru azhagana moment.</p>
+        </div>
+
+        <div class="spotlight-card-wrapper">
+          <div class="spotlight-polaroid-frame" id="spotlight-photo-frame">
+            <div class="spotlight-glow-aura"></div>
+            <div class="polaroid-pin">📍</div>
+            <div class="polaroid-tape polaroid-tape-tl"></div>
+            <div class="spotlight-img-holder">
+              <img src="assets/cozy.jpg" alt="Special Romantic Moment" id="spotlight-photo-img" class="spotlight-img" />
+              <button class="polaroid-heart-react spotlight-heart-btn" title="Love this memory">
+                <span>❤️</span> <span class="heart-count">Forever Loved</span>
+              </button>
+            </div>
+            <div class="spotlight-caption">
+              <h3 class="spotlight-title" id="spotlight-title-text">"En Kooda Nee Irukum Podhu, Time Niraya Nikkudhu"</h3>
+              <p class="spotlight-sub-desc">With every passing day, my love for you grows deeper and sweeter, Raksatha. ❤️</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MEMORY POLAROID VAULT & GALLERY ================= -->
+    <section class="gallery-section section-padding" id="gallery-section">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-badge">📸 Cherished Memories 📸</div>
+          <h2 class="section-title">Our <span class="gradient-text">Memory Vault</span></h2>
+          <p class="section-desc">Namma azhagana memories. Photo-va click panni zoom pannunga, hearts react pannunga!</p>
+        </div>
+
+        <div class="polaroid-gallery-grid" id="polaroid-gallery">
+          <!-- Polaroid 1 -->
+          <div class="polaroid-card tilt-left" data-photo-id="1">
+            <div class="polaroid-washi washi-top"></div>
+            <div class="polaroid-img-holder">
+              <img src="assets/sunset.jpg" alt="Sunset Romance" class="gallery-img" id="gallery-img-1" />
+              <button class="polaroid-heart-react" title="Love this memory">
+                <span>❤️</span> <span class="heart-count">99+</span>
+              </button>
+            </div>
+            <div class="polaroid-note">
+              <p class="polaroid-title" id="gallery-title-1">Un Kooda Golden Hour</p>
+              <span class="polaroid-date">En idhayathula eppavume</span>
+            </div>
+          </div>
+
+          <!-- Polaroid 2 -->
+          <div class="polaroid-card tilt-right" data-photo-id="2">
+            <div class="polaroid-washi washi-center"></div>
+            <div class="polaroid-img-holder">
+              <img src="assets/stargazing.jpg" alt="Stargazing Together" class="gallery-img" id="gallery-img-2" />
+              <button class="polaroid-heart-react" title="Love this memory">
+                <span>❤️</span> <span class="heart-count">100+</span>
+              </button>
+            </div>
+            <div class="polaroid-note">
+              <p class="polaroid-title" id="gallery-title-2">Stars &amp; Namma Dreams</p>
+              <span class="polaroid-date">Where wishes come true</span>
+            </div>
+          </div>
+
+          <!-- Polaroid 3 -->
+          <div class="polaroid-card tilt-left-sm" data-photo-id="3">
+            <div class="polaroid-washi washi-top"></div>
+            <div class="polaroid-img-holder">
+              <img src="assets/cozy.jpg" alt="Cozy Candid Laughter" class="gallery-img" id="gallery-img-3" />
+              <button class="polaroid-heart-react" title="Love this memory">
+                <span>❤️</span> <span class="heart-count">100+</span>
+              </button>
+            </div>
+            <div class="polaroid-note">
+              <p class="polaroid-title" id="gallery-title-3">Unlimited Sirippu &amp; Tea</p>
+              <span class="polaroid-date">Namma sweet moments</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= THE FOREVER PROMISE / PLAYFUL PROPOSAL ================= -->
+    <section class="promise-section section-padding" id="promise-section">
+      <div class="section-container">
+        <div class="promise-card-outer">
+          <div class="promise-glow"></div>
+          
+          <div class="promise-header">
+            <span class="promise-ring-icon">💍</span>
+            <div class="promise-tag">The Eternal Question</div>
+          </div>
+
+          <h2 class="promise-title">
+            Raksatha, En Kaila Pidichutu <span class="gradient-text">Forever En Kooda Iruppiya?</span>
+          </h2>
+
+          <p class="promise-desc">
+            Vazhkayoda ovvoru santhosham, kashtam, siripu ellathulayum un koodave un kaila pidichu irupan. En kooda forever irukiya di thangamey?
+          </p>
+
+          <div class="proposal-buttons-area" id="proposal-area">
+            <!-- The Big YES Button -->
+            <button class="btn btn-proposal-yes" id="proposal-yes-btn">
+              <span class="yes-sparkle">✨</span>
+              <span>YES! A Million Times Yes! 💍❤️</span>
+            </button>
+
+            <!-- Playful Runaway NO Button -->
+            <button class="btn btn-proposal-no" id="proposal-no-btn">
+              <span>No 🙈</span>
+            </button>
+          </div>
+
+          <div class="proposal-feedback-msg" id="proposal-feedback-msg">
+            <span id="feedback-emoji">💖</span>
+            <span id="feedback-text">Love you di Raksatha! Infinite stars-ah vida unna romba love panren!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= ROMANTIC FOOTER ================= -->
+  <footer class="romantic-footer">
+    <div class="footer-container">
+      <div class="footer-heart-symbol">
+        <span class="pulsing-heart">💖</span>
+      </div>
+      <h3 class="footer-names">Prose &amp; Raksatha</h3>
+      <p class="footer-sub">Written in the stars. Sealed with infinite true love.</p>
+      
+      <div class="footer-actions">
+        <button id="make-a-wish-btn" class="wish-btn">
+          <span>💫 Make a Wish Together</span>
+        </button>
+      </div>
+
+      <div class="footer-copyright">
+        &copy; Forever &amp; Always • Made with pure love by Prose for Raksatha.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL: SECRET SURPRISE PHOTO POP-UP ================= -->
+  <div class="modal-backdrop" id="surprise-photo-modal">
+    <div class="modal-box modal-surprise-popup">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-icon">🎁</span>
+          <h3 class="modal-title">🎉 Secret Surprise For Raksatha 🎉</h3>
+        </div>
+        <button class="modal-close-btn" id="close-surprise-modal-btn" aria-label="Close surprise photo">&times;</button>
+      </div>
+      <div class="modal-body custom-scrollbar">
+        <div class="surprise-popup-inner">
+          <div class="surprise-popup-photo-wrapper">
+            <img src="assets/surprise.jpg" alt="Secret Surprise Photo" id="modal-surprise-img" class="surprise-popup-img" />
+            <div class="surprise-popup-badge">✨ Surprise Unlocked ✨</div>
+          </div>
+          
+          <div class="surprise-popup-details">
+            <div class="secret-ribbon mt-3">👑 OFFICIAL LOVE VOUCHER FOR RAKSATHA 👑</div>
+            <h2 class="surprise-popup-heading">Lifetime Of Infinite Love &amp; Cuddles</h2>
+            <p class="surprise-popup-text" id="modal-surprise-text">
+              "Indha coupon vechu lifetime full-ah unlimited hugs, spontaneous late-night ice cream runs, priority forehead kisses, and Prose-oda unconditional true love redeem pannikalam! ❤️"
+            </p>
+            <div class="secret-perks">
+              <span class="perk-pill">✨ 100% Unconditional Love</span>
+              <span class="perk-pill">🌹 Lifetime Validity</span>
+              <span class="perk-pill">🥰 Zero Expiry Date</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary btn-glow" id="surprise-modal-love-btn">
+          <span>💖</span>
+          <span>Love You Thangamey! ❤️</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: DEDICATED FULLSCREEN LOVE LETTER (CLEAN SCROLL) ================= -->
+  <div class="modal-backdrop" id="letter-modal">
+    <div class="modal-box modal-letter-full">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-icon">💌</span>
+          <h3 class="modal-title">My Heartfelt Letter To Raksatha</h3>
+        </div>
+        <button class="modal-close-btn" id="close-letter-modal-btn" aria-label="Close letter">&times;</button>
+      </div>
+      <div class="modal-body custom-scrollbar modal-letter-scroll">
+        <div class="parchment-letter-wrapper">
+          <div class="parchment-rose-top">🌹 <span>Forever &amp; Always</span> 🌹</div>
+          <h2 class="parchment-salutation">My Dearest Raksatha,</h2>
+          
+          <div class="parchment-body" id="modal-letter-full-text">
+            <!-- Populated with readable Tanglish letter -->
+          </div>
+
+          <div class="parchment-signature">
+            <div class="sig-title-small">Yours eternally &amp; completely,</div>
+            <div class="sig-author-name">Prose ❤️</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="modal-letter-close-bottom">
+          <span>💖</span>
+          <span>Close &amp; Cherish</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: CELEBRATION CERTIFICATE ================= -->
+  <div class="modal-backdrop" id="certificate-modal">
+    <div class="modal-box modal-certificate">
+      <button class="modal-close-btn" id="close-cert-modal-btn" aria-label="Close certificate">&times;</button>
+      <div class="certificate-inner" id="printable-certificate">
+        <div class="cert-border">
+          <div class="cert-header">
+            <span class="cert-crown">👑</span>
+            <div class="cert-title">CERTIFICATE OF ETERNAL LOVE</div>
+            <div class="cert-subtitle">Registered in the Stars &amp; Sealed in Our Hearts</div>
+          </div>
+          <div class="cert-body">
+            <p class="cert-text">This certifies that</p>
+            <h2 class="cert-names" id="cert-couple-names">Prose &amp; Raksatha</h2>
+            <p class="cert-statement">
+              Have officially entered an unbreakable covenant of endless love, shared laughter, midnight adventures, unconditional support, and infinite cuddles for all eternity.
+            </p>
+            <div class="cert-signatures">
+              <div class="cert-sig-col">
+                <span class="sig-line">Prose</span>
+                <span class="sig-title">Groom of Her Heart</span>
+              </div>
+              <div class="cert-seal-badge">
+                <span>❤️</span>
+                <span>FOREVER</span>
+              </div>
+              <div class="cert-sig-col">
+                <span class="sig-line">Raksatha</span>
+                <span class="sig-title">Queen of His World</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cert-actions">
+        <button class="btn btn-primary" id="download-cert-btn">
+          <span>💖</span>
+          <span>Save &amp; Celebrate</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: PERSONALIZATION & PHOTO MANAGER ================= -->
+  <div class="modal-backdrop" id="customizer-modal">
+    <div class="modal-box modal-customizer">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-icon">✨</span>
+          <h3 class="modal-title">Personalize Your Love Universe</h3>
+        </div>
+        <button class="modal-close-btn" id="close-customizer-modal-btn" aria-label="Close settings">&times;</button>
+      </div>
+      
+      <div class="modal-body custom-scrollbar">
+        <p class="customizer-intro">
+          Easily update names, anniversary start date, custom Tanglish messages, or upload your actual photos. Changes are saved automatically in your browser!
+        </p>
+
+        <!-- Names & Date -->
+        <div class="form-section">
+          <h4 class="form-section-title">💑 Couple Details</h4>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="input-partner-1">Your Name</label>
+              <input type="text" id="input-partner-1" value="Prose" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label for="input-partner-2">Partner's Name</label>
+              <input type="text" id="input-partner-2" value="Raksatha" class="form-input" />
+            </div>
+          </div>
+
+          <div class="form-group mt-3">
+            <label for="input-start-date">Relationship / Anniversary Start Date</label>
+            <input type="date" id="input-start-date" class="form-input" value="2023-01-01" />
+            <small class="form-help">This powers the live love clock counter.</small>
+          </div>
+        </div>
+
+        <!-- Photo Uploaders -->
+        <div class="form-section mt-4">
+          <h4 class="form-section-title">📸 Upload Your Real Photos</h4>
+          <div class="photo-upload-grid">
+            <!-- Hero Photo -->
+            <div class="upload-slot">
+              <label class="upload-label">Hero Main Photo</label>
+              <div class="upload-preview-wrapper">
+                <img src="assets/sunset.jpg" id="preview-hero" class="upload-preview-img" alt="Hero Preview" />
+                <label for="file-hero" class="upload-overlay-btn">
+                  <span>📷 Change</span>
+                  <input type="file" id="file-hero" accept="image/*" class="file-input-hidden" />
+                </label>
+              </div>
+            </div>
+
+            <!-- Scratch Surprise Photo -->
+            <div class="upload-slot">
+              <label class="upload-label">Scratch Secret Photo</label>
+              <div class="upload-preview-wrapper">
+                <img src="assets/surprise.jpg" id="preview-surprise" class="upload-preview-img" alt="Surprise Preview" />
+                <label for="file-surprise" class="upload-overlay-btn">
+                  <span>📷 Change</span>
+                  <input type="file" id="file-surprise" accept="image/*" class="file-input-hidden" />
+                </label>
+              </div>
+            </div>
+
+            <!-- Spotlight Photo -->
+            <div class="upload-slot">
+              <label class="upload-label">Spotlight Photo</label>
+              <div class="upload-preview-wrapper">
+                <img src="assets/cozy.jpg" id="preview-spotlight" class="upload-preview-img" alt="Spotlight Preview" />
+                <label for="file-spotlight" class="upload-overlay-btn">
+                  <span>📷 Change</span>
+                  <input type="file" id="file-spotlight" accept="image/*" class="file-input-hidden" />
+                </label>
+              </div>
+            </div>
+
+            <!-- Memory 1 -->
+            <div class="upload-slot">
+              <label class="upload-label">Polaroid #1</label>
+              <div class="upload-preview-wrapper">
+                <img src="assets/sunset.jpg" id="preview-photo-1" class="upload-preview-img" alt="Photo 1 Preview" />
+                <label for="file-photo-1" class="upload-overlay-btn">
+                  <span>📷 Change</span>
+                  <input type="file" id="file-photo-1" accept="image/*" class="file-input-hidden" />
+                </label>
+              </div>
+            </div>
+
+            <!-- Memory 2 -->
+            <div class="upload-slot">
+              <label class="upload-label">Polaroid #2</label>
+              <div class="upload-preview-wrapper">
+                <img src="assets/stargazing.jpg" id="preview-photo-2" class="upload-preview-img" alt="Photo 2 Preview" />
+                <label for="file-photo-2" class="upload-overlay-btn">
+                  <span>📷 Change</span>
+                  <input type="file" id="file-photo-2" accept="image/*" class="file-input-hidden" />
+                </label>
+              </div>
+            </div>
+
+            <!-- Memory 3 -->
+            <div class="upload-slot">
+              <label class="upload-label">Polaroid #3</label>
+              <div class="upload-preview-wrapper">
+                <img src="assets/cozy.jpg" id="preview-photo-3" class="upload-preview-img" alt="Photo 3 Preview" />
+                <label for="file-photo-3" class="upload-overlay-btn">
+                  <span>📷 Change</span>
+                  <input type="file" id="file-photo-3" accept="image/*" class="file-input-hidden" />
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom Love Letter Text -->
+        <div class="form-section mt-4">
+          <h4 class="form-section-title">💌 Custom Love Letter (Tanglish)</h4>
+          <div class="form-group">
+            <label for="input-letter-body">Love Letter Content</label>
+            <textarea id="input-letter-body" rows="6" class="form-input form-textarea">Un kitta solla nariya vishayam manasula irukku thangamey... En life la nee vandhadhuku apram dhaan ellaame romba azhaga maariduchu.
+
+Unnoda anbu, unnoda chinna chinna sirippu, un kooda irukura andha nimmathi... idhu edhuvume enaku vera engaum kedaikaadhu. Un kooda pesura ovvoru nimishamum enaku romba special.
+
+En kastamaana nerathula en kooda nikurathula irundhu, enna purinjikuradhu varaikum nee thaan enaku ellame. Thank you for being my best friend, my soulmate, and my forever love.
+
+Life full-ah un koodave unna thaangi pidichu vazhanum nu aasa padrann. Love you so much Raksatha! ❤️</textarea>
+          </div>
+        </div>
+
+        <!-- Scratch Card Message -->
+        <div class="form-section mt-4">
+          <h4 class="form-section-title">🎁 Scratch Secret Voucher Message</h4>
+          <div class="form-group">
+            <label for="input-scratch-msg">Secret Revealed Message</label>
+            <textarea id="input-scratch-msg" rows="3" class="form-input form-textarea">Indha coupon vechu lifetime full-ah unlimited hugs, spontaneous late-night ice cream runs, forehead kisses, and Prose-oda unconditional true love redeem pannikalam! ❤️</textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-glass" id="reset-defaults-btn">Reset to Defaults</button>
+        <button class="btn btn-primary" id="save-customizer-btn">Save &amp; Apply Changes ✨</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox for Polaroid Zoom -->
+  <div class="lightbox-backdrop" id="photo-lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close-btn">&times;</button>
+      <img src="" alt="Zoomed Memory" id="lightbox-img" class="lightbox-img" />
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>
