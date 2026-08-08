@@ -387,7 +387,16 @@ Life full-ah un koodave unna thaangi pidichu vazhanum nu aasa padrann. Love you 
   }
 
   if (introHeartBtn) {
+    // Standard click for Desktop
     introHeartBtn.addEventListener('click', openIntroGate);
+
+    // Immediate Touch event for Mobile (Fixes the bug)
+    introHeartBtn.addEventListener('touchstart', (e) => {
+      e.preventDefault(); // Prevents ghost clicks and double firing
+      openIntroGate();
+    }, { passive: false });
+
+    // Keyboard accessibility
     introHeartBtn.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
