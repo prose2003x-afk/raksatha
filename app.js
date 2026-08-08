@@ -932,7 +932,7 @@ Life full-ah un koodave unna thaangi pidichu vazhanum nu aasa padrann. Love you 
     if (modalSurpriseImg) modalSurpriseImg.src = userConfig.surpriseImage || 'Scratch_Secret_photo.jpeg';
 
     const spotlightPhotoImg = document.getElementById('spotlight-photo-img');
-    if (spotlightPhotoImg) spotlightPhotoImg.src = userConfig.spotlightImage || 'Spotlight.jpeg',;
+    if (spotlightPhotoImg) spotlightPhotoImg.src = userConfig.spotlightImage || 'Spotlight.jpeg';
 
     const galleryImg1 = document.getElementById('gallery-img-1');
     if (galleryImg1) galleryImg1.src = userConfig.photo1;
